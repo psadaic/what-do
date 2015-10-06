@@ -1,0 +1,5 @@
+Started GET "/" for 31.147.156.68 at 2015-07-08 22:26:47 +0200
+Cannot render console from 31.147.156.68! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TodosController#index as HTML
+  Rendered todos/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 21372ms (Views: 21334.2ms | ActiveRecord: 0.0ms)

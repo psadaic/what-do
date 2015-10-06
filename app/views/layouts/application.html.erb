@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>what:do</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Simple To-Do Manager">
+  <meta name="author" content="psadaic">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <style type="text/css">
+  	.unselectable {
+    	-webkit-touch-callout: none;
+    	-webkit-user-select: none;
+    	-khtml-user-select: none;
+    	-moz-user-select: none;
+    	-ms-user-select: none;
+    	-o-user-select: none;
+    	user-select: none;
+        cursor: default;
+	}
+  </style>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container unselectable">
+	<div class="row">
+		<div class="col-xs-12">
+			<center><h1><b><span style="color:#6c2085;">what</span><span style="color:#000000">:do</span></b></h1></center>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<%= yield %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<p class="pull-left" style="font-size: 11px; padding: 0 0 0 20px;">
+        		<button type="button" class="btn btn-default btn-xs" style="background-color:#ededed;color:#ededed;outline: none;">.</button> To-Do 
+        		<button type="button" class="btn btn-default btn-xs" style="background-color:#6c208c;color:#6c208c;outline: none;">.</button> Done
+    		</p>
+    		<p class="pull-right" style="font-size: 11px; padding: 0 20px 0 0">
+    			&copy; 2015 - <span style="color:#6c208c;"><i class="fa fa-user"></i></span> <a href="http://psadaic.me" target="_blank">psadaic</a>
+    			<br/>
+        		<a href="http://what-do.madserver.ovh/what-do.zip" target="_blank"><i class="fa fa-download"></i> Source Code</a>
+    		</p>
+		</div>
+  	</div>
+</div>
+</body>
+</html>

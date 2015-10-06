@@ -1,0 +1,43 @@
+<table class="table">
+  <thead>
+    <tr>
+      <%= form_for :todo do |f| %>
+        <th><center><%= f.text_field :text, :rows => "1", class: 'form-control vertical-resize' %></center></th>
+        <th style="width: 100px;"><center><%= f.submit "Add", class: "btn btn-default btn-block" %></center></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @todos.each do |todo| %>
+      <tr>
+        <td class="default" style="word-break: break-all;background-color:#ededed;"><b><%= todo.text %></b></td>
+        <td class="default" style="word-break: break-all;width: 100px; background-color:#ededed;">
+          <center class="pull-right">
+          <%= link_to todo_path(todo) + '/complete', method: :get, class: "btn btn-success btn-xs" do %>
+            <i class="fa fa-check"></i>
+          <% end %>
+          <%= link_to todo_path(todo), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" do %>
+            <i class="fa fa-trash-o"></i>
+          <% end %>
+          </center>
+        </td>
+      </tr>
+    <% end %>
+      <tr><td></td><td></td></tr>
+    <% @todosDone.each do |todo| %>
+      <tr>
+        <td class="success" style="word-break: break-all;background-color:#6c208c;"><b style="color:white;"><%= todo.text %></b></td>
+        <td class="success" style="word-break: break-all;width: 100px; background-color:#6c208c;">
+          <center class="pull-right">
+          <%= link_to todo_path(todo) + '/complete', method: :get, class: "btn btn-warning btn-xs" do %>
+            <i class="fa fa-times-circle-o"></i>
+          <% end %>
+          <%= link_to todo_path(todo), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" do %>
+            <i class="fa fa-trash-o"></i>
+          <% end %>
+          </center>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
